@@ -11,3 +11,4 @@ Choose between TypeScript or JavaScript (default is TypeScript and the project i
 After installing Playwright and selected TypeScript validate that the path in the terminal lead to the project.
 
 To run the test, in the terminal run the "npx playwright test --headed" command.
+
