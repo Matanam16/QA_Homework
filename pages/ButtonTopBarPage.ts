@@ -20,7 +20,7 @@ export default class ButoonTopBarPage{
     }
 
     public async publishAD(){
-        await this.page.waitForTimeout(2000);
+        await this.page.waitForTimeout(2000); 
         await this.publishADBtn.isEnabled();
         await this.publishADBtn.nth(2).click();
 
