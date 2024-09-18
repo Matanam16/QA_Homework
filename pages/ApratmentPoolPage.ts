@@ -18,16 +18,24 @@ export default class AparmentPoolPage extends BasePage{
     public async serchYoursADByStreetName(streetName: string){
         await this.serchStreetFiled.first().click();
         await this.serchStreetFiled.first().fill(streetName);
+        
     }
 
     public async validateApartmentDetalis(assetType: string, city: string, streetName: string, houosNumber: string, roomNumber: string, squerMeterr: string, floorNumber:string){
-       await this.validateElementText.apartmentDetails.nth(5)(assetType);
-       await this.validateElementText.apartmentDetails.nth(6)(city);
-       await this.validateElementText.apartmentDetails.nth(7)(streetName);
-       await this.validateElementText.apartmentDetails.nth(8)(houosNumber);
-       await this.validateElementText.assetDetails.nth(4)(roomNumber);
-       await this.validateElementText.assetDetails.nth(6)(squerMeterr);
-       await this.validateElementText.assetDetails.nth(8)(floorNumber);
+      await expect (this.apartmentDetails.nth(4)).toHaveText(assetType);
+      await expect (this.apartmentDetails.nth(5)).toHaveText(city);
+      await expect (this.apartmentDetails.nth(6)).toHaveText(streetName);
+      await expect (this.apartmentDetails.nth(7)).toHaveText(houosNumber);
+      await expect (this.assetDetails.nth(0)).toHaveText(roomNumber);
+      await expect (this.assetDetails.nth(2)).toHaveText(squerMeterr);
+      await expect (this.assetDetails.nth(4)).toHaveText(floorNumber);
+    //    await this.validateElementText.apartmentDetails.nth(5)(assetType);
+    //    await this.validateElementText.apartmentDetails.nth(6)(city);
+    //    await this.validateElementText.apartmentDetails.nth(7)(streetName);
+    //    await this.validateElementText.apartmentDetails.nth(8)(houosNumber);
+    //    await this.validateElementText.assetDetails.nth(4)(roomNumber);
+    //    await this.validateElementText.assetDetails.nth(6)(squerMeterr);
+    //    await this.validateElementText.assetDetails.nth(8)(floorNumber);
 
     }
 }
