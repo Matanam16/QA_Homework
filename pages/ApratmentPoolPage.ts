@@ -1,33 +1,33 @@
 import { expect, Locator, Page } from "@playwright/test";
 import BasePage from "./BasePage";
 
-export default class AparmentPoolPage{
+export default class AparmentPoolPage extends BasePage{
 
     serchStreetFiled: Locator;
     apartmentDetails: Locator;
     assetDetails:Locator;
-    basePage: any;
 
     constructor(protected page: Page){
 
+        super(page);
         this.serchStreetFiled = page.locator('[name="street"]');
-        this.apartmentDetails = page.locator('[class="elementor-icon-list-items elementor-inline-items"][class="elementor-icon-list-item elementor-inline-item"]');
+        this.apartmentDetails = page.locator('[class="elementor-icon-list-text"]');
         this.assetDetails = page.locator('[class="elementor-element elementor-element-3c7aa752 e-con-full e-flex e-con e-child"] [class="elementor-heading-title elementor-size-default"]');
     }
 
     public async serchYoursADByStreetName(streetName: string){
-        await this.serchStreetFiled.last().click();
-        await this.serchStreetFiled.fill(streetName);
+        await this.serchStreetFiled.first().click();
+        await this.serchStreetFiled.first().fill(streetName);
     }
 
     public async validateApartmentDetalis(assetType: string, city: string, streetName: string, houosNumber: string, roomNumber: string, squerMeterr: string, floorNumber:string){
-       await this.basePage.validateElementText.apartmentDetails.nth(5)(assetType);
-       await this.basePage.validateElementText.apartmentDetails.nth(6)(city);
-       await this.basePage.validateElementText.apartmentDetails.nth(7)(streetName);
-       await this.basePage.validateElementText.apartmentDetails.nth(8)(houosNumber);
-       await this.basePage.validateElementText.assetDetails.nth(1)(roomNumber);
-       await this.basePage.validateElementText.assetDetails.nth(3)(squerMeterr);
-       await this.basePage.validateElementText.assetDetails.nth(5)(floorNumber);
+       await this.validateElementText.apartmentDetails.nth(5)(assetType);
+       await this.validateElementText.apartmentDetails.nth(6)(city);
+       await this.validateElementText.apartmentDetails.nth(7)(streetName);
+       await this.validateElementText.apartmentDetails.nth(8)(houosNumber);
+       await this.validateElementText.assetDetails.nth(4)(roomNumber);
+       await this.validateElementText.assetDetails.nth(6)(squerMeterr);
+       await this.validateElementText.assetDetails.nth(8)(floorNumber);
 
     }
 }

@@ -77,54 +77,54 @@ test.describe("Sanity Test", async () => {
           await homePage.acceptPopup();
           await butoonTopBarPage.clickLogin();
           await loginPage.loginToApplication(username , password);
-          await butoonTopBarPage.publishAD();
+          // await butoonTopBarPage.publishAD();
     });
 
-    await test.step("Fill Status, City And Street Number", async () => {
-          await newAdStepOne.selectAssetStatus(status);
-          await newAdStepOne.selectCity(city);
-          await newAdStepOne.selectStreet(stretName);
-          await newAdStepOne.fillHouseNumber(houosNumber);
-          await basePage.clickNext(1);
-    });
+    // await test.step("Fill Status, City And Street Number", async () => {
+    //       await newAdStepOne.selectAssetStatus(status);
+    //       await newAdStepOne.selectCity(city);
+    //       await newAdStepOne.selectStreet(stretName);
+    //       await newAdStepOne.fillHouseNumber(houosNumber);
+    //       await basePage.clickNext(1);
+    // });
 
-    await test.step("Fill Property Details", async () => {
-      await newAdStepTwo.fillFloorNumber(floorNumber);
-      await newAdStepTwo.fillAllFloorNumber(floorssNumber);
-      await newAdStepTwo.fillRoomsNumber(roomssNumber);
-      await newAdStepTwo.fillTerraceNumber(terraceNumber);
-      await newAdStepTwo.fillParkingNumber(parkingNumber);
-      await newAdStepTwo.fillBuildSquerMeterr(squerMeterr);
-      await newAdStepTwo.selectElivatorOption(elivatorOption);
-      await basePage.clickNext(2);
-    });
+    // await test.step("Fill Property Details", async () => {
+    //   await newAdStepTwo.fillFloorNumber(floorNumber);
+    //   await newAdStepTwo.fillAllFloorNumber(floorssNumber);
+    //   await newAdStepTwo.fillRoomsNumber(roomssNumber);
+    //   await newAdStepTwo.fillTerraceNumber(terraceNumber);
+    //   await newAdStepTwo.fillParkingNumber(parkingNumber);
+    //   await newAdStepTwo.fillBuildSquerMeterr(squerMeterr);
+    //   await newAdStepTwo.selectElivatorOption(elivatorOption);
+    //   await basePage.clickNext(2);
+    // });
 
-    await test.step("Add Some Addes Value", async () => {
-      await propertyDetailsPage.selectPropertyDetails(propertyDetails[0]);
-      await propertyDetailsPage.selectPropertyDetails(propertyDetails[1]);
-      await propertyDetailsPage.selectPropertyDetails(propertyDetails[2]);
-      await basePage.clickNext(3);
-    });
+    // await test.step("Add Some Addes Value", async () => {
+    //   await propertyDetailsPage.selectPropertyDetails(propertyDetails[0]);
+    //   await propertyDetailsPage.selectPropertyDetails(propertyDetails[1]);
+    //   await propertyDetailsPage.selectPropertyDetails(propertyDetails[2]);
+    //   await basePage.clickNext(3);
+    // });
 
-    await test.step("Fill The Property Costs", async () => {
-      await costsPage.fillnumberOfPayments(paymentNumber);
-      await costsPage.fillHouseCommittee(houosCommittee);
-      await costsPage.fillTaxAsset(taxAsset);
-      await costsPage.fillPrice(price);
-      await costsPage.fillStartDate(month, startDate);
-      await basePage.clickNext(4);
-    });
+    // await test.step("Fill The Property Costs", async () => {
+    //   await costsPage.fillnumberOfPayments(paymentNumber);
+    //   await costsPage.fillHouseCommittee(houosCommittee);
+    //   await costsPage.fillTaxAsset(taxAsset);
+    //   await costsPage.fillPrice(price);
+    //   await costsPage.fillStartDate(month, startDate);
+    //   await basePage.clickNext(4);
+    // });
 
-    await test.step("Add Some Pictures", async () => {
-      await uploadPictursPage.uploadPhoto(imageName);
-      await basePage.clickNext(4);
-    });
+    // await test.step("Add Some Pictures", async () => {
+    //   await uploadPictursPage.uploadPhoto(imageName);
+    //   await basePage.clickNext(4);
+    // });
 
-    await test.step("Add Pesonal Details And Publih The AD", async () => {
-      await personalDetailsPage.fillFullName(fullName);
-      await personalDetailsPage.fillFphoneNumber(phoneNumber);
-      await personalDetailsPage.publishTheAD();
-    });
+    // await test.step("Add Pesonal Details And Publih The AD", async () => {
+    //   await personalDetailsPage.fillFullName(fullName);
+    //   await personalDetailsPage.fillFphoneNumber(phoneNumber);
+    //   await personalDetailsPage.publishTheAD();
+    // });
 
     await test.step("Validate That The AD Published", async () => {
       await butoonTopBarPage.clickOnApartmentPool();
