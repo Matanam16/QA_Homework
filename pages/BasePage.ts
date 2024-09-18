@@ -1,5 +1,5 @@
 import test, { expect, Locator, Page } from "@playwright/test";
-import { text } from "stream/consumers";
+import internal from "stream";
 
 export default class BasePage{
 
@@ -8,7 +8,7 @@ export default class BasePage{
 
     constructor(protected page: Page){
 
-        this.nextBtn = page.locator('[]');
+        this.nextBtn = page.locator('[class="ff-float-right ff-btn ff-btn-next ff-btn-secondary"]');
 
     }
 
@@ -24,7 +24,7 @@ export default class BasePage{
         });
 
     }
-        public async clickNext(){
-            await this.nextBtn.click();
+        public async clickNext(index: number ){
+            await this.nextBtn.nth(index).click();
         }
 }

@@ -8,7 +8,6 @@ export default class NewAdStepTwo{
     numberOfParkings: Locator;
     squareMeterFiled: Locator;
     elivatorSelector: Locator;
-    nextBtn: Locator;
     
      constructor(protected page: Page){
         this.floorFiled = page.locator('[data-name="floor"]');
@@ -18,7 +17,6 @@ export default class NewAdStepTwo{
         this.numberOfParkings = page.locator('[name="_parking"]');
         this.squareMeterFiled = page.locator('[data-name="built_mr"]');
         this.elivatorSelector = page.locator('[name="elevator_1"]');
-        this.nextBtn = page.getByRole('button', { name: 'הבא' }).nth(1);
      }
 
      public async fillFloorNumber(number:string){
@@ -61,10 +59,6 @@ export default class NewAdStepTwo{
         await this.page.waitForTimeout(1500);
         await this.elivatorSelector.selectOption(option);
 
-    }
-
-    public async clickNext(){
-        await this.nextBtn.click();
     }
 }
 

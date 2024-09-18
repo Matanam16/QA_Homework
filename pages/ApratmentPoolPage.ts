@@ -1,10 +1,12 @@
 import { expect, Locator, Page } from "@playwright/test";
+import BasePage from "./BasePage";
 
 export default class AparmentPoolPage{
 
     serchStreetFiled: Locator;
     apartmentDetails: Locator;
     assetDetails:Locator;
+    basePage: any;
 
     constructor(protected page: Page){
 
@@ -19,15 +21,13 @@ export default class AparmentPoolPage{
     }
 
     public async validateApartmentDetalis(assetType: string, city: string, streetName: string, houosNumber: string, roomNumber: string, squerMeterr: string, floorNumber:string){
-        await this.apartmentDetails.textContent();
-        expect(this.apartmentDetails.nth(5)).toBe(assetType); 
-        expect(this.apartmentDetails.nth(6)).toBe(city); 
-        expect(this.apartmentDetails.nth(7)).toBe(streetName); 
-        expect(this.apartmentDetails.nth(8)).toBe(houosNumber); 
-        await this.assetDetails.textContent();
-        expect(this.assetDetails.nth(1)).toBe(roomNumber);
-        expect(this.assetDetails.nth(1)).toBe(squerMeterr);
-        expect(this.assetDetails.nth(1)).toBe(floorNumber);
+       await this.basePage.validateElementText.apartmentDetails.nth(5)(assetType);
+       await this.basePage.validateElementText.apartmentDetails.nth(6)(city);
+       await this.basePage.validateElementText.apartmentDetails.nth(7)(streetName);
+       await this.basePage.validateElementText.apartmentDetails.nth(8)(houosNumber);
+       await this.basePage.validateElementText.assetDetails.nth(1)(roomNumber);
+       await this.basePage.validateElementText.assetDetails.nth(3)(squerMeterr);
+       await this.basePage.validateElementText.assetDetails.nth(5)(floorNumber);
 
     }
 }

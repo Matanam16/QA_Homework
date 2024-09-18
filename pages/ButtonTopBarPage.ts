@@ -9,7 +9,7 @@ export default class ButoonTopBarPage{
     constructor(protected page: Page){
 
         this.loginBtn = this.page.getByRole('link', { name: 'התחבר' });
-        this.publishADBtn = this.page.getByRole('link', { name: 'פרסם מודעה' });
+        this.publishADBtn = this.page.locator('[class="elementor-button elementor-button-link elementor-size-sm elementor-animation-grow"]');
         this.apartmentPool = this.page.getByRole('link', { name: 'מאגר דירות' });
         
     }
@@ -20,7 +20,7 @@ export default class ButoonTopBarPage{
     }
 
     public async publishAD(){
-        await this.publishADBtn.click();
+        await this.publishADBtn.nth(2).click();
 
    }
 
