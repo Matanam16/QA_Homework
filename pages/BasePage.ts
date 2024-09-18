@@ -11,6 +11,10 @@ export default class BasePage{
 
     }
 
+    public async GoToUrl(url:string){
+        await this.page.goto(url);
+    }
+
     public async validatePageUrl(url: string) {
             await expect(this.page).toHaveURL(url)
     }
@@ -18,7 +22,7 @@ export default class BasePage{
     public async validateElementText(element: Locator, expectedText: string) {
             await expect(element).toContainText(expectedText);
 
-    }
+    }
         public async clickNext(index: number ){
             await this.nextBtn.nth(index).click();
         }
