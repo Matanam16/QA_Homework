@@ -6,7 +6,7 @@ export default class PropertyDetailsPage{
 
     constructor(protected page: Page){
 
-        this.propertyDetails = this.page.locator('[data-name="asset_characteristics"]');
+        this.propertyDetails = this.page.locator('[class="ff-el-form-check-label"]');
 
     }
 

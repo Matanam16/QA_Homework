@@ -4,11 +4,15 @@ export default class NewAdStepOne{
 
     assetStatus: Locator;
     houseNumberFiled: Locator;
+    citySelection: Locator;
+    streetSelector: Locator;
 
     constructor(protected page: Page){
 
         this.assetStatus = this.page.locator('#ff_8_asset_status');
         this.houseNumberFiled = this.page.locator('[name="street_number"]');
+        this.citySelection  = this.page.locator('[data-name="city"]');
+        this.streetSelector = this.page.locator('[data-name="street_1"]');
 
     }
 
@@ -18,19 +22,13 @@ export default class NewAdStepOne{
     }
 
     public async selectCity(city:string){
-        await this.page.getByText('- בחר ישוב -Remove item').click();
-        await this.page.getByLabel('- בחר ישוב -').click();
-        await this.page.getByLabel('- בחר ישוב -').fill(city);
-        await this.page.getByRole('option', { name: 'כרמיאל Press to select' }).click();
+        await this.citySelection.selectOption(city);
 
 
     }
 
     public async selectStreet(street:string){
-        await this.page.locator('div').filter({ hasText: /^- בחר רחוב -Remove item$/ }).first().click();
-        await this.page.getByLabel('- בחר רחוב -').click();
-        await this.page.getByLabel('- בחר רחוב -').fill('אטד');
-        await this.page.getByLabel('- בחר רחוב -').press('Enter');
+        await this.streetSelector.selectOption(street);
 
     }
 

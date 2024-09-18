@@ -44,7 +44,8 @@ test.describe("Sanity Test", async () => {
   const houosCommittee = '300';
   const taxAsset = '1200';
   const price = '4500';
-  const startDate = '01/01/2025';
+  const month = 'November';
+  const day = '15';
   const imageName = 'house';
   const fullName = 'Matan Amsalem';
   const phoneNumber = '050-9220593';
@@ -110,7 +111,7 @@ test.describe("Sanity Test", async () => {
       await costsPage.fillHouseCommittee(houosCommittee);
       await costsPage.fillTaxAsset(taxAsset);
       await costsPage.fillPrice(price);
-      await costsPage.fillStartDate(startDate);
+      await costsPage.fillStartDate(month, day);
       await basePage.clickNext(4);
     });
 
