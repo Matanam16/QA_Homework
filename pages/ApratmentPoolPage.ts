@@ -16,7 +16,7 @@ export default class AparmentPoolPage{
     }
 
     public async serchYoursADByStreetName(streetName: string){
-        await this.serchStreetFiled.first().click();
+        await this.serchStreetFiled.last().click();
         await this.serchStreetFiled.fill(streetName);
     }
 

@@ -10,7 +10,7 @@ export default class PersonalDetailsPage{
 
         this.fullNameFiled = page.locator('[data-name="name_full"]');
         this.phoneNumberFiled = page.locator('[data-name="phone_number"]');
-        this.publishBtn = page.locator('[class="ff-btn ff-btn-submit ff-btn-md ff_btn_style"]');
+        this.publishBtn = page.locator('[class="ff-btn ff-btn-submit ff-btn-md publish-asset ff_btn_style"]');
 
     }
 
