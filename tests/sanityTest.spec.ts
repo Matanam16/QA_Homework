@@ -96,55 +96,55 @@ test.describe("Sanity Test", async () => {
     });
 
     await test.step("Fill Property Details", async () => {
-      await newAdStepTwo.fillFloorNumber(floorNumber);
-      await newAdStepTwo.fillAllFloorNumber(floorssNumber);
-      await newAdStepTwo.fillRoomsNumber(roomssNumber);
-      await newAdStepTwo.fillTerraceNumber(terraceNumber);
-      await newAdStepTwo.fillParkingNumber(parkingNumber);
-      await newAdStepTwo.fillBuildSquerMeterr(squerMeterr);
-      await newAdStepTwo.selectElivatorOption(elivatorOption);
-      await basePage.clickNext(2);
+          await newAdStepTwo.fillFloorNumber(floorNumber);
+          await newAdStepTwo.fillAllFloorNumber(floorssNumber);
+          await newAdStepTwo.fillRoomsNumber(roomssNumber);
+          await newAdStepTwo.fillTerraceNumber(terraceNumber);
+          await newAdStepTwo.fillParkingNumber(parkingNumber);
+          await newAdStepTwo.fillBuildSquerMeterr(squerMeterr);
+          await newAdStepTwo.selectElivatorOption(elivatorOption);
+          await basePage.clickNext(2);
     });
 
     await test.step("Add Some Addes Value", async () => {
-      await propertyDetailsPage.selectPropertyDetails(propertyDetails[0]);
-      await propertyDetailsPage.selectPropertyDetails(propertyDetails[1]);
-      await propertyDetailsPage.selectPropertyDetails(propertyDetails[2]);
-      await basePage.clickNext(3);
+          await propertyDetailsPage.selectPropertyDetails(propertyDetails[0]);
+          await propertyDetailsPage.selectPropertyDetails(propertyDetails[1]);
+          await propertyDetailsPage.selectPropertyDetails(propertyDetails[2]);
+          await basePage.clickNext(3);
     });
 
     await test.step("Fill The Property Costs", async () => {
-      await costsPage.fillnumberOfPayments(paymentNumber);
-      await costsPage.fillHouseCommittee(houosCommittee);
-      await costsPage.fillTaxAsset(taxAsset);
-      await costsPage.fillPrice(price);
-      await costsPage.fillStartDate(month, startDate);
-      await basePage.clickNext(4);
+          await costsPage.fillnumberOfPayments(paymentNumber);
+          await costsPage.fillHouseCommittee(houosCommittee);
+          await costsPage.fillTaxAsset(taxAsset);
+          await costsPage.fillPrice(price);
+          await costsPage.fillStartDate(month, startDate);
+          await basePage.clickNext(4);
     });
 
     await test.step("Add Some Pictures", async () => {
-      await uploadPictursPage.uploadPhoto(imageName);
-      await basePage.clickNext(4);
+          await uploadPictursPage.uploadPhoto(imageName);
+          await basePage.clickNext(4);
     });
 
     await test.step("Add Pesonal Details And Publih The AD", async () => {
-      await ContactDetailsPage.fillFullName(fullName);
-      await ContactDetailsPage.fillFphoneNumber(phoneNumber);
-      await ContactDetailsPage.publishTheAD();
+          await contactDetailsPage.fillFullName(fullName);
+          await contactDetailsPage.fillFphoneNumber(phoneNumber);
+          await contactDetailsPage.publishTheAD();
     });
 
     await test.step("Validate That The AD Published", async () => {
-      await butoonTopBarPage.clickOnApartmentPool();
-      await aparmentPoolPage.serchYoursADByStreetName(stretName);
-      await aparmentPoolPage.validateApartmentDetalis(assetType, city[1], stretName, houosNumber, roomssNumber, squerMeterr, floorNumber);
+          await butoonTopBarPage.clickOnApartmentPool();
+          await aparmentPoolPage.serchYoursADByStreetName(stretName);
+          await aparmentPoolPage.validateApartmentDetalis(assetType, city[1], stretName, houosNumber, roomssNumber, squerMeterr, floorNumber);
       
     });
 
     await test.step("Delete AD", async () => {
-      await butoonTopBarPage.goToPersonalDetails();
-      await personalDetailsPage.clickOnManageMyAdsButton();
-      await myAdsPage.searchAnAd(address);
-      await myAdsPage.deleteAd();
+          await butoonTopBarPage.goToPersonalDetails();
+          await personalDetailsPage.clickOnManageMyAdsButton();
+          await myAdsPage.searchAnAd(address);
+          await myAdsPage.deleteAd();
     });
 
   });
