@@ -45,8 +45,8 @@ test.describe("Sanity Test", async () => {
   const taxAsset = '1200';
   const price = '4500';
   const month = 'November';
-  const day = '15';
-  const imageName = 'house';
+  const startDate = '15';
+  const imageName = 'house.JPG';
   const fullName = 'Matan Amsalem';
   const phoneNumber = '050-9220593';
 
@@ -111,13 +111,13 @@ test.describe("Sanity Test", async () => {
       await costsPage.fillHouseCommittee(houosCommittee);
       await costsPage.fillTaxAsset(taxAsset);
       await costsPage.fillPrice(price);
-      await costsPage.fillStartDate(month, day);
+      await costsPage.fillStartDate(month, startDate);
       await basePage.clickNext(4);
     });
 
     await test.step("Add Some Pictures", async () => {
       await uploadPictursPage.uploadPhoto(imageName);
-      await basePage.clickNext(5);
+      await basePage.clickNext(4);
     });
 
     await test.step("Add Pesonal Details And Publih The AD", async () => {

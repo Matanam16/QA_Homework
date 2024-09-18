@@ -45,7 +45,7 @@ export default class CostsPage{
 
     }
 
-    public async fillStartDate(day:string, month: string){
+    public async fillStartDate(month:string, day:string){
         await this.startDateFiled.click();
         await this.monthSelector.selectOption(month);
         await this.dayPicker.getByText(day).click();

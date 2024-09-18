@@ -12,7 +12,8 @@ export default class UploadPictursPage{
     }
 
     public async uploadPhoto(photoName: string){
-        await this.uploadPictureBtn.setInputFiles(path.join(__dirname, `../../tests/House_Photo/${photoName}`));
+        await this.uploadPictureBtn.isVisible();
+        await this.uploadPictureBtn.setInputFiles(path.join(__dirname, `../../QA_Homework/tests/House_Photo/${photoName}`));
     }
 
 }
