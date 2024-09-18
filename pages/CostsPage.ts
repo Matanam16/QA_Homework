@@ -7,7 +7,6 @@ export default class CostsPage{
     taxAssetFiled: Locator;
     priceFiled: Locator;
     startDateFiled: Locator;
-    nextBtn: Locator;
 
     constructor(protected page: Page){
         
@@ -16,7 +15,6 @@ export default class CostsPage{
         this.taxAssetFiled = page.locator('[data-name="tax_asset"]');
         this.priceFiled = page.locator('[data-name="price""]');
         this.startDateFiled = page.locator('[data-name="date_start"]');
-        this.nextBtn = page.getByRole('button', { name: 'הבא' }).nth(3);
     }
 
     public async fillnumberOfPayments(number:string){
@@ -50,8 +48,5 @@ export default class CostsPage{
 
     }
 
-    public async clickNext(){
-        await this.nextBtn.click();
-    }
 }
 

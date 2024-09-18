@@ -4,13 +4,11 @@ export default class NewAdStepOne{
 
     assetStatus: Locator;
     houseNumberFiled: Locator;
-    nextBtn: Locator;
 
     constructor(protected page: Page){
 
         this.assetStatus = this.page.locator('#ff_8_asset_status');
         this.houseNumberFiled = this.page.locator('[name="street_number"]');
-        this.nextBtn = this.page.locator('div').filter({ hasText: /^הבא$/ }).getByRole('button');
 
     }
 
@@ -40,10 +38,6 @@ export default class NewAdStepOne{
         await this.houseNumberFiled.click();
         await this.houseNumberFiled.fill(number);
 
-    }
-
-    public async clickNext(){
-        await this.nextBtn.click();
     }
 }
 
