@@ -7,14 +7,18 @@ export default class CostsPage{
     taxAssetFiled: Locator;
     priceFiled: Locator;
     startDateFiled: Locator;
+    monthSelector: Locator;
+    dayPicker: Locator;
 
     constructor(protected page: Page){
         
         this.numberOfPaymentsFiled = page.locator('[data-name="credits"]');
         this.houseCommitteeFiled = page.locator('[data-name="house_committee"]');
         this.taxAssetFiled = page.locator('[data-name="tax_asset"]');
-        this.priceFiled = page.locator('[data-name="price""]');
+        this.priceFiled = page.locator('[data-name="price"]');
         this.startDateFiled = page.locator('[data-name="date_start"]');
+        this.monthSelector = page.locator('[class="flatpickr-monthDropdown-months"]');
+        this.dayPicker = page.locator('[class="flatpickr-day"]');
     }
 
     public async fillnumberOfPayments(number:string){
@@ -41,10 +45,10 @@ export default class CostsPage{
 
     }
 
-    public async fillStartDate(startDate:string){
+    public async fillStartDate(day:string, month: string){
         await this.startDateFiled.click();
-        await this.page.getByRole('img').nth(3).click();
-        await this.page.getByLabel(startDate).click();
+        await this.monthSelector.selectOption(month);
+        await this.dayPicker.getByText(day).click();
 
     }
 
