@@ -1,6 +1,15 @@
 import { Locator, Page } from "@playwright/test";
 
 export default class ContactDetailsPage{
+    static publishTheAD() {
+      throw new Error('Method not implemented.');
+    }
+    static fillFphoneNumber(phoneNumber: string) {
+      throw new Error('Method not implemented.');
+    }
+    static fillFullName(fullName: string) {
+      throw new Error('Method not implemented.');
+    }
 
     fullNameFiled: Locator;
     phoneNumberFiled: Locator;
